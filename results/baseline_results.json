@@ -1,0 +1,57 @@
+{
+  "n_samples": 6153,
+  "n_features": 420,
+  "n_classes": 17,
+  "classes": [
+    "aminoglycoside antibiotic",
+    "carbapenem",
+    "cephalosporin",
+    "diaminopyrimidine antibiotic",
+    "disinfecting agents and antiseptics",
+    "fluoroquinolone antibiotic",
+    "glycopeptide antibiotic",
+    "lincosamide antibiotic",
+    "macrolide antibiotic",
+    "monobactam",
+    "penicillin beta-lactam",
+    "peptide antibiotic",
+    "phenicol antibiotic",
+    "rifamycin antibiotic",
+    "streptogramin A antibiotic",
+    "streptogramin antibiotic",
+    "tetracycline antibiotic"
+  ],
+  "top_drug_classes": [
+    "cephalosporin",
+    "penicillin beta-lactam",
+    "carbapenem",
+    "monobactam",
+    "fluoroquinolone antibiotic",
+    "aminoglycoside antibiotic",
+    "peptide antibiotic",
+    "macrolide antibiotic",
+    "tetracycline antibiotic",
+    "phenicol antibiotic",
+    "lincosamide antibiotic",
+    "streptogramin antibiotic",
+    "glycopeptide antibiotic",
+    "diaminopyrimidine antibiotic",
+    "disinfecting agents and antiseptics",
+    "rifamycin antibiotic",
+    "streptogramin A antibiotic"
+  ],
+  "results": {
+    "RandomForest": {
+      "hamming_loss": 0.01839728580302958,
+      "subset_accuracy": 0.8212835093419983,
+      "micro_f1": 0.9152169125743228,
+      "macro_f1": 0.5157738491518833
+    },
+    "XGBoost": {
+      "hamming_loss": 0.01634252401204186,
+      "subset_accuracy": 0.8562144597887896,
+      "micro_f1": 0.9265463917525774,
+      "macro_f1": 0.6210579333728814
+    }
+  }
+}

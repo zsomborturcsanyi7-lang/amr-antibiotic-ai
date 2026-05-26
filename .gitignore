@@ -1,0 +1,23 @@
+# CARD data files
+data/raw/card*.tar.bz2
+data/raw/card.json
+data/raw/*.fasta
+data/raw/*.tsv
+data/raw/*.txt
+
+# Processed data
+data/processed/
+
+# Models
+models/*.pkl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
