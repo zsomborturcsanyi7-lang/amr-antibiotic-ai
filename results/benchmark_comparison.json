@@ -1,0 +1,947 @@
+{
+  "random_di_XGBoost": {
+    "hamming_loss": 0.011785523504273504,
+    "subset_accuracy": 0.8597756410256411,
+    "micro_f1": 0.926839378238342,
+    "macro_f1": 0.6313455304613775,
+    "mean_auc": 0.9797617462169678,
+    "per_class": {
+      "cephalosporin": {
+        "auc": 0.958548738710682,
+        "support": 13
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.9933263401577082,
+        "support": 46
+      },
+      "carbapenem": {
+        "auc": 0.9915938589490487,
+        "support": 532
+      },
+      "monobactam": {
+        "auc": 0.9976692275747507,
+        "support": 688
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9846444985131116,
+        "support": 15
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.981778859151122,
+        "support": 15
+      },
+      "peptide antibiotic": {
+        "auc": 0.9809344691521924,
+        "support": 69
+      },
+      "macrolide antibiotic": {
+        "auc": 0.9838486166196779,
+        "support": 17
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.9446299067572235,
+        "support": 7
+      },
+      "phenicol antibiotic": {
+        "auc": 0.9935483870967742,
+        "support": 8
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.9589203618567403,
+        "support": 22
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.9780556763810352,
+        "support": 38
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.9943641844804636,
+        "support": 258
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": 1.0,
+        "support": 6
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.9922574157868276,
+        "support": 663
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.9661054994388328,
+        "support": 33
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.9875633208966542,
+        "support": 27
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 0.9613487579589275,
+        "support": 9
+      },
+      "aminocoumarin antibiotic": {
+        "auc": 0.9987127916331456,
+        "support": 5
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.9759662810510268,
+        "support": 9
+      },
+      "glycylcycline": {
+        "auc": 0.9958558765972142,
+        "support": 7
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.9057971014492754,
+        "support": 6
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.9996655038944904,
+        "support": 17
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.9891462351003004,
+        "support": 34
+      }
+    }
+  },
+  "random_di_LightGBM": {
+    "hamming_loss": 0.01201923076923077,
+    "subset_accuracy": 0.8517628205128205,
+    "micro_f1": 0.9253421816673579,
+    "macro_f1": 0.624784016299389,
+    "mean_auc": 0.9818226056844566,
+    "per_class": {
+      "cephalosporin": {
+        "auc": 0.9189660541887262,
+        "support": 13
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.9951168342617376,
+        "support": 46
+      },
+      "carbapenem": {
+        "auc": 0.9929064980887974,
+        "support": 532
+      },
+      "monobactam": {
+        "auc": 0.9971345514950166,
+        "support": 688
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9810759664774263,
+        "support": 15
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.988213030548797,
+        "support": 15
+      },
+      "peptide antibiotic": {
+        "auc": 0.9825324826984303,
+        "support": 69
+      },
+      "macrolide antibiotic": {
+        "auc": 0.9848043197782769,
+        "support": 17
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.9574076205824795,
+        "support": 7
+      },
+      "phenicol antibiotic": {
+        "auc": 0.9954637096774194,
+        "support": 8
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.9779400860151268,
+        "support": 22
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.9813614615050021,
+        "support": 38
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.9945873463315325,
+        "support": 258
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": 1.0,
+        "support": 6
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.990410075930438,
+        "support": 663
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.9682504052874423,
+        "support": 33
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.9920829920829921,
+        "support": 27
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 0.9441305712492153,
+        "support": 9
+      },
+      "aminocoumarin antibiotic": {
+        "auc": 0.9985518905872889,
+        "support": 5
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.970495919648462,
+        "support": 9
+      },
+      "glycylcycline": {
+        "auc": 0.9965465638310118,
+        "support": 7
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.9676596886741815,
+        "support": 6
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 1.0,
+        "support": 17
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.9881044674871596,
+        "support": 34
+      }
+    }
+  },
+  "random_trip_XGBoost": {
+    "hamming_loss": 0.01171875,
+    "subset_accuracy": 0.8605769230769231,
+    "micro_f1": 0.927434360140583,
+    "macro_f1": 0.643475178375924,
+    "mean_auc": 0.9794441354080172,
+    "per_class": {
+      "cephalosporin": {
+        "auc": 0.9196823419495485,
+        "support": 13
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.9923497070100558,
+        "support": 46
+      },
+      "carbapenem": {
+        "auc": 0.992202923509892,
+        "support": 532
+      },
+      "monobactam": {
+        "auc": 0.9972253945182724,
+        "support": 688
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9844822925114897,
+        "support": 15
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.981184103811841,
+        "support": 15
+      },
+      "peptide antibiotic": {
+        "auc": 0.9820530786345588,
+        "support": 69
+      },
+      "macrolide antibiotic": {
+        "auc": 0.9858078080948057,
+        "support": 17
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.9414066996661677,
+        "support": 7
+      },
+      "phenicol antibiotic": {
+        "auc": 0.9919354838709677,
+        "support": 8
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.9732314993326413,
+        "support": 22
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.9830361026533275,
+        "support": 38
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.9941860465116279,
+        "support": 258
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": 1.0,
+        "support": 6
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.9919673589356848,
+        "support": 663
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.9712931787005862,
+        "support": 33
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.9841659841659841,
+        "support": 27
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 0.9650255582458972,
+        "support": 9
+      },
+      "aminocoumarin antibiotic": {
+        "auc": 0.9977473853580048,
+        "support": 5
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.970137207425343,
+        "support": 9
+      },
+      "glycylcycline": {
+        "auc": 0.9964314492920456,
+        "support": 7
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.9252549651100377,
+        "support": 6
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.9999044296841402,
+        "support": 17
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.9859482507994961,
+        "support": 34
+      }
+    }
+  },
+  "random_trip_LightGBM": {
+    "hamming_loss": 0.011284722222222222,
+    "subset_accuracy": 0.8573717948717948,
+    "micro_f1": 0.9299046038987971,
+    "macro_f1": 0.6458089818043451,
+    "mean_auc": 0.9839390696867473,
+    "per_class": {
+      "cephalosporin": {
+        "auc": 0.9628464652756151,
+        "support": 13
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.9924401360052088,
+        "support": 46
+      },
+      "carbapenem": {
+        "auc": 0.9924838282857983,
+        "support": 532
+      },
+      "monobactam": {
+        "auc": 0.9970592815614617,
+        "support": 688
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9921600432549338,
+        "support": 15
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.9862665585293323,
+        "support": 15
+      },
+      "peptide antibiotic": {
+        "auc": 0.9863185455618246,
+        "support": 69
+      },
+      "macrolide antibiotic": {
+        "auc": 0.9894872652554118,
+        "support": 17
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.9395648670427075,
+        "support": 7
+      },
+      "phenicol antibiotic": {
+        "auc": 0.9767137096774194,
+        "support": 8
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.9795343318997478,
+        "support": 22
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.9850587211831231,
+        "support": 38
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.9947537389397855,
+        "support": 258
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": 1.0,
+        "support": 6
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.9892704747908367,
+        "support": 663
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.9796732759695723,
+        "support": 33
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.9897169897169896,
+        "support": 27
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 0.9619765043493858,
+        "support": 9
+      },
+      "aminocoumarin antibiotic": {
+        "auc": 0.9995172968624296,
+        "support": 5
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.9713927002062596,
+        "support": 9
+      },
+      "glycylcycline": {
+        "auc": 0.9976977092206746,
+        "support": 7
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.9626945786366077,
+        "support": 6
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 1.0,
+        "support": 17
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.9879106502568078,
+        "support": 34
+      }
+    }
+  },
+  "clustered_di_XGBoost": {
+    "hamming_loss": 0.07019927536231885,
+    "subset_accuracy": 0.13043478260869565,
+    "micro_f1": 0.17989417989417988,
+    "macro_f1": 0.11696859903381641,
+    "mean_auc": NaN,
+    "per_class": {
+      "cephalosporin": {
+        "auc": NaN,
+        "support": 0
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.7238095238095238,
+        "support": 15
+      },
+      "carbapenem": {
+        "auc": 0.44999999999999996,
+        "support": 2
+      },
+      "monobactam": {
+        "auc": 0.7102615694164991,
+        "support": 21
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.8953488372093024,
+        "support": 6
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.6414728682170542,
+        "support": 6
+      },
+      "peptide antibiotic": {
+        "auc": 0.6135531135531136,
+        "support": 14
+      },
+      "macrolide antibiotic": {
+        "auc": 0.71996996996997,
+        "support": 18
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.4744318181818182,
+        "support": 4
+      },
+      "phenicol antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.8850574712643677,
+        "support": 5
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.7631874298540965,
+        "support": 11
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.6703296703296704,
+        "support": 1
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.5707317073170731,
+        "support": 10
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.4883720930232558,
+        "support": 6
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.7600732600732603,
+        "support": 14
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 0.9999999999999999,
+        "support": 2
+      },
+      "aminocoumarin antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.4926829268292683,
+        "support": 10
+      },
+      "glycylcycline": {
+        "auc": 0.6392045454545454,
+        "support": 4
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.8664772727272727,
+        "support": 4
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.9126436781609196,
+        "support": 5
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.6756302521008403,
+        "support": 7
+      }
+    }
+  },
+  "clustered_di_LightGBM": {
+    "hamming_loss": 0.07110507246376811,
+    "subset_accuracy": 0.08695652173913043,
+    "micro_f1": 0.11299435028248588,
+    "macro_f1": 0.05606060606060606,
+    "mean_auc": NaN,
+    "per_class": {
+      "cephalosporin": {
+        "auc": NaN,
+        "support": 0
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.6943722943722943,
+        "support": 15
+      },
+      "carbapenem": {
+        "auc": 0.5555555555555556,
+        "support": 2
+      },
+      "monobactam": {
+        "auc": 0.8256203890006707,
+        "support": 21
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9573643410852714,
+        "support": 6
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.6472868217054264,
+        "support": 6
+      },
+      "peptide antibiotic": {
+        "auc": 0.6593406593406593,
+        "support": 14
+      },
+      "macrolide antibiotic": {
+        "auc": 0.7252252252252253,
+        "support": 18
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.65625,
+        "support": 4
+      },
+      "phenicol antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.9241379310344827,
+        "support": 5
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.7081930415263749,
+        "support": 11
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.13186813186813184,
+        "support": 1
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.4719512195121951,
+        "support": 10
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.5368217054263567,
+        "support": 6
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.8461538461538461,
+        "support": 14
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 1.0,
+        "support": 2
+      },
+      "aminocoumarin antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.5365853658536586,
+        "support": 10
+      },
+      "glycylcycline": {
+        "auc": 0.6676136363636364,
+        "support": 4
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.9005681818181818,
+        "support": 4
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.7609195402298852,
+        "support": 5
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.7310924369747899,
+        "support": 7
+      }
+    }
+  },
+  "clustered_trip_XGBoost": {
+    "hamming_loss": 0.06884057971014493,
+    "subset_accuracy": 0.18478260869565216,
+    "micro_f1": 0.20833333333333334,
+    "macro_f1": 0.11466503267973856,
+    "mean_auc": NaN,
+    "per_class": {
+      "cephalosporin": {
+        "auc": NaN,
+        "support": 0
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.7021645021645022,
+        "support": 15
+      },
+      "carbapenem": {
+        "auc": 0.6277777777777778,
+        "support": 2
+      },
+      "monobactam": {
+        "auc": 0.857813547954393,
+        "support": 21
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9050387596899224,
+        "support": 6
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.8391472868217055,
+        "support": 6
+      },
+      "peptide antibiotic": {
+        "auc": 0.716117216117216,
+        "support": 14
+      },
+      "macrolide antibiotic": {
+        "auc": 0.7695195195195195,
+        "support": 18
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.6590909090909091,
+        "support": 4
+      },
+      "phenicol antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.8689655172413794,
+        "support": 5
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.8069584736251403,
+        "support": 11
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.5604395604395604,
+        "support": 1
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.6158536585365855,
+        "support": 10
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.5581395348837209,
+        "support": 6
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.7344322344322344,
+        "support": 14
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 1.0,
+        "support": 2
+      },
+      "aminocoumarin antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.6902439024390244,
+        "support": 10
+      },
+      "glycylcycline": {
+        "auc": 0.6363636363636364,
+        "support": 4
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.9375,
+        "support": 4
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.8114942528735632,
+        "support": 5
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.8453781512605042,
+        "support": 7
+      }
+    }
+  },
+  "clustered_trip_LightGBM": {
+    "hamming_loss": 0.07246376811594203,
+    "subset_accuracy": 0.07608695652173914,
+    "micro_f1": 0.09090909090909091,
+    "macro_f1": 0.04126082251082251,
+    "mean_auc": NaN,
+    "per_class": {
+      "cephalosporin": {
+        "auc": NaN,
+        "support": 0
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.78008658008658,
+        "support": 15
+      },
+      "carbapenem": {
+        "auc": 0.2277777777777778,
+        "support": 2
+      },
+      "monobactam": {
+        "auc": 0.8665325285043595,
+        "support": 21
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.8934108527131783,
+        "support": 6
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.7926356589147288,
+        "support": 6
+      },
+      "peptide antibiotic": {
+        "auc": 0.6190476190476191,
+        "support": 14
+      },
+      "macrolide antibiotic": {
+        "auc": 0.7237237237237236,
+        "support": 18
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.7073863636363638,
+        "support": 4
+      },
+      "phenicol antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.8873563218390803,
+        "support": 5
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.6397306397306398,
+        "support": 11
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.6593406593406592,
+        "support": 1
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.6146341463414634,
+        "support": 10
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.49612403100775193,
+        "support": 6
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.7609890109890111,
+        "support": 14
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 0.9833333333333333,
+        "support": 2
+      },
+      "aminocoumarin antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.624390243902439,
+        "support": 10
+      },
+      "glycylcycline": {
+        "auc": 0.75,
+        "support": 4
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.8721590909090908,
+        "support": 4
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.8735632183908045,
+        "support": 5
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.8672268907563025,
+        "support": 7
+      }
+    }
+  },
+  "clustered_trip_xgb_tuned": {
+    "hamming_loss": 0.06567028985507246,
+    "subset_accuracy": 0.21739130434782608,
+    "micro_f1": 0.2564102564102564,
+    "macro_f1": 0.14049707602339181,
+    "mean_auc": NaN,
+    "per_class": {
+      "cephalosporin": {
+        "auc": NaN,
+        "support": 0
+      },
+      "penicillin beta-lactam": {
+        "auc": 0.7367965367965368,
+        "support": 15
+      },
+      "carbapenem": {
+        "auc": 0.5555555555555556,
+        "support": 2
+      },
+      "monobactam": {
+        "auc": 0.8672032193158954,
+        "support": 21
+      },
+      "fluoroquinolone antibiotic": {
+        "auc": 0.9205426356589147,
+        "support": 6
+      },
+      "aminoglycoside antibiotic": {
+        "auc": 0.8081395348837209,
+        "support": 6
+      },
+      "peptide antibiotic": {
+        "auc": 0.6877289377289377,
+        "support": 14
+      },
+      "macrolide antibiotic": {
+        "auc": 0.6846846846846847,
+        "support": 18
+      },
+      "tetracycline antibiotic": {
+        "auc": 0.5113636363636364,
+        "support": 4
+      },
+      "phenicol antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "lincosamide antibiotic": {
+        "auc": 0.8367816091954023,
+        "support": 5
+      },
+      "streptogramin antibiotic": {
+        "auc": 0.7250280583613917,
+        "support": 11
+      },
+      "glycopeptide antibiotic": {
+        "auc": 0.09890109890109888,
+        "support": 1
+      },
+      "diaminopyrimidine antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "disinfecting agents and antiseptics": {
+        "auc": 0.6097560975609756,
+        "support": 10
+      },
+      "rifamycin antibiotic": {
+        "auc": 0.5484496124031009,
+        "support": 6
+      },
+      "streptogramin A antibiotic": {
+        "auc": 0.6877289377289377,
+        "support": 14
+      },
+      "phosphonic acid antibiotic": {
+        "auc": 1.0,
+        "support": 2
+      },
+      "aminocoumarin antibiotic": {
+        "auc": NaN,
+        "support": 0
+      },
+      "streptogramin B antibiotic": {
+        "auc": 0.5707317073170732,
+        "support": 10
+      },
+      "glycylcycline": {
+        "auc": 0.6306818181818181,
+        "support": 4
+      },
+      "isoniazid-like antibiotic": {
+        "auc": 0.8778409090909091,
+        "support": 4
+      },
+      "pleuromutilin antibiotic": {
+        "auc": 0.7931034482758621,
+        "support": 5
+      },
+      "nybomycin-like antibiotic": {
+        "auc": 0.7008403361344537,
+        "support": 7
+      }
+    }
+  }
+}

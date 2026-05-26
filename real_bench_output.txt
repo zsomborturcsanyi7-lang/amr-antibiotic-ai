@@ -1,0 +1,52 @@
+Loading...
+6236 seqs, 24 classes
+Clustering...
+Train: 6144 Test: 92
+Features...
+
+=== DEFAULT XGB (clustered) ===
+Micro F1=0.1667 Macro F1=0.1089 AUC=nan SubsetAcc=0.1413 Hamming=0.0725 Time=76.7s
+
+=== OPTUNA TUNING (clustered) ===
+  0%|          | 0/40 [00:00<?, ?it/s]Best trial: 0. Best value: 0.0809249:   0%|          | 0/40 [04:48<?, ?it/s]Best trial: 0. Best value: 0.0809249:   2%|▎         | 1/40 [04:48<3:07:37, 288.65s/it]Best trial: 1. Best value: 0.091954:   2%|▎         | 1/40 [13:54<3:07:37, 288.65s/it] Best trial: 1. Best value: 0.091954:   5%|▌         | 2/40 [13:54<4:38:44, 440.13s/it]Best trial: 2. Best value: 0.195122:   5%|▌         | 2/40 [17:28<4:38:44, 440.13s/it]Best trial: 2. Best value: 0.195122:   8%|▊         | 3/40 [17:28<3:27:45, 336.91s/it]Best trial: 2. Best value: 0.195122:   8%|▊         | 3/40 [20:43<3:27:45, 336.91s/it]Best trial: 2. Best value: 0.195122:  10%|█         | 4/40 [20:43<2:48:28, 280.80s/it]Best trial: 2. Best value: 0.195122:  10%|█         | 4/40 [22:37<2:48:28, 280.80s/it]Best trial: 2. Best value: 0.195122:  12%|█▎        | 5/40 [22:37<2:08:40, 220.58s/it]Best trial: 2. Best value: 0.195122:  12%|█▎        | 5/40 [25:33<2:08:40, 220.58s/it]Best trial: 2. Best value: 0.195122:  15%|█▌        | 6/40 [25:33<1:56:21, 205.34s/it]Best trial: 2. Best value: 0.195122:  15%|█▌        | 6/40 [27:00<1:56:21, 205.34s/it]Best trial: 2. Best value: 0.195122:  18%|█▊        | 7/40 [27:00<1:31:40, 166.68s/it]Best trial: 2. Best value: 0.195122:  18%|█▊        | 7/40 [29:05<1:31:40, 166.68s/it]Best trial: 2. Best value: 0.195122:  20%|██        | 8/40 [29:05<1:21:50, 153.46s/it]Best trial: 2. Best value: 0.195122:  20%|██        | 8/40 [30:39<1:21:50, 153.46s/it]Best trial: 2. Best value: 0.195122:  22%|██▎       | 9/40 [30:39<1:09:41, 134.89s/it]Best trial: 2. Best value: 0.195122:  22%|██▎       | 9/40 [33:41<1:09:41, 134.89s/it]Best trial: 2. Best value: 0.195122:  25%|██▌       | 10/40 [33:41<1:14:45, 149.51s/it]Best trial: 2. Best value: 0.195122:  25%|██▌       | 10/40 [34:05<1:14:45, 149.51s/it]Best trial: 2. Best value: 0.195122:  28%|██▊       | 11/40 [34:05<53:35, 110.89s/it]  Best trial: 11. Best value: 0.227488:  28%|██▊       | 11/40 [36:42<53:35, 110.89s/it]Best trial: 11. Best value: 0.227488:  30%|███       | 12/40 [36:42<58:23, 125.13s/it]Best trial: 11. Best value: 0.227488:  30%|███       | 12/40 [39:47<58:23, 125.13s/it]Best trial: 11. Best value: 0.227488:  32%|███▎      | 13/40 [39:47<1:04:24, 143.12s/it]Best trial: 11. Best value: 0.227488:  32%|███▎      | 13/40 [44:53<1:04:24, 143.12s/it]Best trial: 11. Best value: 0.227488:  35%|███▌      | 14/40 [44:53<1:23:20, 192.34s/it]Best trial: 11. Best value: 0.227488:  35%|███▌      | 14/40 [47:32<1:23:20, 192.34s/it]Best trial: 11. Best value: 0.227488:  38%|███▊      | 15/40 [47:32<1:15:55, 182.23s/it]Best trial: 11. Best value: 0.227488:  38%|███▊      | 15/40 [50:32<1:15:55, 182.23s/it]Best trial: 11. Best value: 0.227488:  40%|████      | 16/40 [50:32<1:12:37, 181.58s/it]Best trial: 11. Best value: 0.227488:  40%|████      | 16/40 [53:20<1:12:37, 181.58s/it]Best trial: 11. Best value: 0.227488:  42%|████▎     | 17/40 [53:20<1:08:01, 177.45s/it]Best trial: 11. Best value: 0.227488:  42%|████▎     | 17/40 [55:27<1:08:01, 177.45s/it]Best trial: 11. Best value: 0.227488:  45%|████▌     | 18/40 [55:27<59:34, 162.45s/it]  Best trial: 11. Best value: 0.227488:  45%|████▌     | 18/40 [58:47<59:34, 162.45s/it]Best trial: 11. Best value: 0.227488:  48%|████▊     | 19/40 [58:47<1:00:44, 173.55s/it]Best trial: 11. Best value: 0.227488:  48%|████▊     | 19/40 [1:08:06<1:00:44, 173.55s/it]Best trial: 11. Best value: 0.227488:  50%|█████     | 20/40 [1:08:06<1:36:27, 289.37s/it]Best trial: 11. Best value: 0.227488:  50%|█████     | 20/40 [1:12:48<1:36:27, 289.37s/it]Best trial: 11. Best value: 0.227488:  52%|█████▎    | 21/40 [1:12:48<1:30:54, 287.10s/it]Best trial: 11. Best value: 0.227488:  52%|█████▎    | 21/40 [1:17:23<1:30:54, 287.10s/it]Best trial: 11. Best value: 0.227488:  55%|█████▌    | 22/40 [1:17:23<1:25:02, 283.46s/it]Best trial: 11. Best value: 0.227488:  55%|█████▌    | 22/40 [1:21:19<1:25:02, 283.46s/it]Best trial: 11. Best value: 0.227488:  57%|█████▊    | 23/40 [1:21:19<1:16:20, 269.42s/it]Best trial: 11. Best value: 0.227488:  57%|█████▊    | 23/40 [1:25:20<1:16:20, 269.42s/it]Best trial: 11. Best value: 0.227488:  60%|██████    | 24/40 [1:25:20<1:09:34, 260.93s/it]Best trial: 11. Best value: 0.227488:  60%|██████    | 24/40 [1:29:54<1:09:34, 260.93s/it]Best trial: 11. Best value: 0.227488:  62%|██████▎   | 25/40 [1:29:54<1:06:12, 264.87s/it]Best trial: 11. Best value: 0.227488:  62%|██████▎   | 25/40 [1:32:55<1:06:12, 264.87s/it]Best trial: 11. Best value: 0.227488:  65%|██████▌   | 26/40 [1:32:55<55:53, 239.56s/it]  Best trial: 11. Best value: 0.227488:  65%|██████▌   | 26/40 [1:36:41<55:53, 239.56s/it]Best trial: 11. Best value: 0.227488:  68%|██████▊   | 27/40 [1:36:41<51:02, 235.54s/it]Best trial: 11. Best value: 0.227488:  68%|██████▊   | 27/40 [1:41:21<51:02, 235.54s/it]Best trial: 11. Best value: 0.227488:  70%|███████   | 28/40 [1:41:21<49:47, 248.92s/it]Best trial: 11. Best value: 0.227488:  70%|███████   | 28/40 [1:44:59<49:47, 248.92s/it]Best trial: 11. Best value: 0.227488:  72%|███████▎  | 29/40 [1:44:59<43:55, 239.57s/it]Best trial: 11. Best value: 0.227488:  72%|███████▎  | 29/40 [1:52:00<43:55, 239.57s/it]Best trial: 11. Best value: 0.227488:  75%|███████▌  | 30/40 [1:52:00<49:00, 294.05s/it]Best trial: 11. Best value: 0.227488:  75%|███████▌  | 30/40 [1:57:05<49:00, 294.05s/it]Best trial: 11. Best value: 0.227488:  78%|███████▊  | 31/40 [1:57:05<44:34, 297.21s/it]Best trial: 11. Best value: 0.227488:  78%|███████▊  | 31/40 [1:59:57<44:34, 297.21s/it]Best trial: 11. Best value: 0.227488:  80%|████████  | 32/40 [1:59:57<34:38, 259.83s/it]Best trial: 11. Best value: 0.227488:  80%|████████  | 32/40 [2:02:21<34:38, 259.83s/it]Best trial: 11. Best value: 0.227488:  82%|████████▎ | 33/40 [2:02:21<26:14, 224.89s/it]Best trial: 33. Best value: 0.22807:  82%|████████▎ | 33/40 [2:06:21<26:14, 224.89s/it] Best trial: 33. Best value: 0.22807:  85%|████████▌ | 34/40 [2:06:21<22:57, 229.52s/it]Best trial: 33. Best value: 0.22807:  85%|████████▌ | 34/40 [2:11:43<22:57, 229.52s/it]Best trial: 33. Best value: 0.22807:  88%|████████▊ | 35/40 [2:11:43<21:26, 257.33s/it]Best trial: 33. Best value: 0.22807:  88%|████████▊ | 35/40 [2:17:25<21:26, 257.33s/it]Best trial: 33. Best value: 0.22807:  90%|█████████ | 36/40 [2:17:25<18:50, 282.53s/it]Best trial: 36. Best value: 0.290598:  90%|█████████ | 36/40 [2:21:57<18:50, 282.53s/it]Best trial: 36. Best value: 0.290598:  92%|█████████▎| 37/40 [2:21:57<13:58, 279.50s/it]Best trial: 36. Best value: 0.290598:  92%|█████████▎| 37/40 [2:26:30<13:58, 279.50s/it]Best trial: 36. Best value: 0.290598:  95%|█████████▌| 38/40 [2:26:30<09:15, 277.57s/it]Best trial: 36. Best value: 0.290598:  95%|█████████▌| 38/40 [2:32:20<09:15, 277.57s/it]Best trial: 36. Best value: 0.290598:  98%|█████████▊| 39/40 [2:32:20<04:59, 299.13s/it]Best trial: 36. Best value: 0.290598:  98%|█████████▊| 39/40 [2:35:33<04:59, 299.13s/it]Best trial: 36. Best value: 0.290598: 100%|██████████| 40/40 [2:35:33<00:00, 267.45s/it]Best trial: 36. Best value: 0.290598: 100%|██████████| 40/40 [2:35:33<00:00, 233.34s/it]
+
+Best params: {'n_estimators': 287, 'max_depth': 4, 'learning_rate': 0.2411265974737973, 'subsample': 0.639986455210946, 'colsample_bytree': 0.7957428409138783, 'reg_alpha': 0.000752562143778682, 'reg_lambda': 0.00019337777306801398}
+Best Micro F1: 0.2906
+
+=== FINAL MODEL (best params) ===
+Micro F1=0.2906 Macro F1=0.1963 AUC=nan SubsetAcc=0.2065 Hamming=0.0752 Time=186.7s
+
+Per-class AUC:
+  aminocoumarin antibiotic            AUC=nan n=0
+  aminoglycoside antibiotic           AUC=0.7342 n=15
+  carbapenem                          AUC=0.4944 n=2
+  cephalosporin                       AUC=0.7901 n=21
+  diaminopyrimidine antibiotic        AUC=0.8992 n=6
+  disinfecting agents and antiseptics AUC=0.7403 n=6
+  fluoroquinolone antibiotic          AUC=0.6245 n=14
+  glycopeptide antibiotic             AUC=0.7155 n=18
+  glycylcycline                       AUC=0.6108 n=4
+  isoniazid-like antibiotic           AUC=nan n=0
+  lincosamide antibiotic              AUC=0.9563 n=5
+  macrolide antibiotic                AUC=0.6599 n=11
+  monobactam                          AUC=0.6703 n=1
+  nybomycin-like antibiotic           AUC=nan n=0
+  penicillin beta-lactam              AUC=0.5866 n=10
+  peptide antibiotic                  AUC=0.4981 n=6
+  phenicol antibiotic                 AUC=0.7344 n=14
+  phosphonic acid antibiotic          AUC=0.9944 n=2
+  pleuromutilin antibiotic            AUC=nan n=0
+  rifamycin antibiotic                AUC=0.5841 n=10
+  streptogramin A antibiotic          AUC=0.7500 n=4
+  streptogramin B antibiotic          AUC=0.9062 n=4
+  streptogramin antibiotic            AUC=0.8943 n=5
+  tetracycline antibiotic             AUC=0.6403 n=7
+
+============================================
+DEFAULT XGB:  Micro F1 = 0.1667
+TUNED XGB:    Micro F1 = 0.2906
+IMPROVEMENT:  +12.4 pp
+============================================
+
+The REAL maximum on clustered split (dipeptide only): ~0.291
+Compare to: Random split baseline: 0.93 (45% inflated)

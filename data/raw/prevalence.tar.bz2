@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="csrf-token" content="IiF6Qfp9t513PQDYVOf1z0lfydTt1mJaUs8SkNL3" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Comprehensive Antibiotic Resistance Database</title>
+	<meta name="keywords" content="antibiotics,antibiotic,antibiotic resistance,AMR">
+	<meta name="Author" content="Andrew G. McArthur, Gerard D. Wright">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="/css/dataTables.responsive.css">
+	<link rel="stylesheet" href="/spinners/whirly.css" type="text/css">
+	<link rel="stylesheet" href="/spinners/loading.css" type="text/css">
+	<link rel="stylesheet" href="/css/custom.css" type="text/css">
+	<!-- Bootstap Styles -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<!-- Datatables Styles-->
+	<link rel="stylesheet" href="/css/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="/css/dataTables.responsive.css">
+	<!-- App -->
+	<script>
+		window.App = window.App || {};
+		App.siteURL = 'https://card.mcmaster.ca';
+		App.currentURL = 'https://card.mcmaster.ca/latest/prevalence';
+		App.fullURL = 'https://card.mcmaster.ca/latest/prevalence';
+	</script>
+	<!-- jQuery -->
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	<!-- Datatables -->
+	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" type="text/javascript"></script>
+	<!-- Custom global styles -->
+	<style type="text/css">
+		/* Elements */
+		body { padding-top: 200px; /* Whatever the height of your navbar is; the default is 50px */
+			font-family: 'Open Sans', Verdana !important;
+		}
+
+		h1 {
+			font-family: 'Open Sans', Verdana !important;
+		}
+		/* Classes */
+		.container {
+			width: 100% !important;
+		}
+		.navbar-header {
+			padding-bottom: 35px;
+		}
+		.logo-default {
+			padding-bottom: 80px;
+		}
+		.livesearch {
+			font-family: Verdana,Arial,sans-serif;
+			font-size: 16px;
+			font-weight: bold;
+			width: 450px;
+			padding: 1px 2px;
+			text-align: left;
+			max-height: 400px;
+			overflow: auto;
+			position: absolute;
+			background-color: white;
+			z-index: 99999;
+			border: 1px solid #2c3e50;
+		}
+		.ontology_links {
+			font-weight: normal;
+			font-family: 'Open Sans', Verdana;
+		}
+
+		input, textarea {
+			font-family: 'Open Sans', Verdana;
+		}
+		.synonym {
+			color: #2c3e50;
+		}
+		.left{
+			vertical-align: middle;
+			padding: 1px;
+		}
+		.bar {
+			color: #2c3e50;
+		}
+
+
+		/* Start Sachin Edits */
+
+		.navbar-copyright {
+			position:relative;
+			float:left;
+			margin-right:0px;
+			padding:0px;
+			margin-top:1px;
+			margin-bottom:1px;
+			background-color:transparent;
+			background-image:none;
+			border:1px solid transparent;
+			border-radius:0px;
+		}
+
+
+		/* IDs */
+		#footer div{
+			height: 200px;
+			font-size: 14px;
+			width: 1200px;
+		}
+		#footer li{
+		    display:inline;
+		    float:left;
+		}
+		#footer a{
+		    display:block;
+		    text-align:center;
+		}
+
+		.navbar-custom {
+			background-color:white;
+			border-radius:0;
+		}
+
+		.dev {
+			color: black;
+		}
+
+		.countBubl {
+			float:left;
+			margin-top:-42px;
+			margin-left:35px;
+			background:#ed1d24;
+			color:#fff;padding:2px;
+		}
+
+		.badge {
+			display: display;
+			background: #BA070F;
+			color: #fff;
+			padding: 1px 7px;
+			position: relative;
+			right: -2px;
+			top: -12px;
+			z-index: 999;
+			border-radius: .8em;
+			border: 2px solid #fff;
+		}
+
+	.centeredlogo {
+        width: 135px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        border: 1px solid white;
+        padding: 1px;
+    }
+
+    .centeredlogo img {
+        vertical-align: middle;
+    }
+
+
+    .changesets-tableClass{
+        max-width: 340px;
+        word-wrap: break-word;
+    }
+
+	</style>
+</head>
+
+<body>
+	
+
+<nav class="navbar navbar-default navbar-fixed-top"><!--<hr style="border: 0.5; height: 0.5px; background-color: #ecf0f1; color: #ecf0f1;"/> -->
+		<div class="container-fluid">
+			<div class="navbar-header">
+					<div>
+						<a class="navbar-brand" href="https://card.mcmaster.ca/home">
+							<h2>CARD</h2>						</a>
+					</div>
+					<div>
+						<br>
+						<br>
+						<p>
+							<div>
+								<small>
+									<br>
+									<div style="margin-right:1px;">
+										<a class="navbar-copyright" href="/about">Use or Download Copyright &amp; Disclaimer</a>
+									</div>
+									<div style="margin-right:1px;"><br/></div>
+									<div style="margin-top:5px;">
+										<a class="navbar-copyright" href="https://github.com/arpcard/amr_curation" target="_blank">Help Us Curate</a>
+																					<div class="navbar-copyright" style="color: #ffffff;">#AMRCuration #WorkTogether</div>
+																			</div>
+								</small>
+							</div>
+						</p>
+					</div>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<table table-layout="fixed" style="width:450px;" ><br>
+						<tr>
+							<td>
+								<table, style="width:112.5px", align="center">
+									<tr>
+										<td align="center"> <li><a href="https://card.mcmaster.ca/browse">Browse</a></li></td>
+										<td align="center">
+											<li>
+												<a href="https://card.mcmaster.ca/analyze">Analyze
+																								</a>
+											</li>
+										</td>
+										<td align="center"> <li><a href="https://card.mcmaster.ca/download">Download</a></li></td>
+										<td align="center"> <li><a href="https://card.mcmaster.ca/about">About</a></li></td>
+																			</tr>
+								</table>
+							</td>
+						</tr>
+	    				<tr>
+	    					<td>
+	    						<table, style="width:450px"><br>
+					 				<tr>
+					 					<td>
+						 					<div>
+												<li class="nav navbar-center" align="center">
+							       			 		<input id="search" type="text" class="form-control" placeholder="Search" style="width:450px" autocomplete="off">
+							    					<div id="update"></div>
+							    				</li>
+						    				</div>
+						    			</td>
+						    		</tr>
+	    						</table>
+	    					</td>
+	    				</tr>
+	    			</table>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+									</ul>
+			</div>
+		</div>
+			</nav>
+
+
+
+<!-- CSS -->
+<style type="text/css">
+
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+ }
+
+.modal-body {
+	height: auto;
+	width: auto;
+}
+
+</style>
+
+
+<!-- Note Modal -->
+<div id="noteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">A Note on Ongoing Revisions of the Antibiotic Resistance Ontology</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        	<!--<h4>A Note on Ongoing Revisions of the Antibiotic Resistance Ontology</h4> -->
+
+			The Comprehensive Antibiotic Resistance Database gratefully acknowledges recent funding from the Genome Canada & Canadian Institutes of Health Research's Bioinformatics & Computational Biology program, allowing integration of the Antibiotic Resistance Ontology (ARO) with the Genomic Epidemiology Ontology, IRIDA platform, and OBO Foundry (see <a href="https://www.genomecanada.ca/en/news-and-events/news-releases/government-canada-invests-new-genomics-big-data-research-projects" target="_genome">Genome Canada press release</a>).  As such, the next two years will be a time of active development for the ARO. Expect significant changes in the ARO between monthly releases as well as occasional incomplete revisions, which may affect downstream analyses.
+
+			<h4>February 2017 Changes</h4>
+			<ul>
+				<li>
+					Use of the part_of relationship now follows canonical usage and is restricted to association of sub-units with their large multi-unit protein complexes
+				</li>
+				<li>
+					Extensive revisions to the antimicrobial efflux branch of the ARO
+				</li>
+				<li>
+					Extensive revisions to the rRNA mutations branch of the ARO
+				</li>
+				<li>
+					New use of the participates_in and has_part relationships in place of formerly incorrect usage of the part_of relationship for association of resistance determinants with their mechanism of action.
+				</li>
+			</ul>
+
+			<h4>April 2017 Changes</h4>
+ 			<ul>
+	 			<li>
+	 				Extensive addition of confers_resistance_to_drug relationships for efflux complexes
+	 			</li>
+	 			<li>
+	 				Drug and mechanism category updates for the Resistance Gene Identifier
+	 			</li>
+ 			</ul>
+
+			<h4>May 2017 Changes</h4>
+ 			<ul>
+	 			<li>
+	 				Addition of bitscores to detection models, curation of chloramphenicol exporter proteins, ontology changes, JSON file format changes
+	 			</li>
+ 			</ul>
+
+			<h4>August 2017 Changes</h4>
+ 			<ul>
+	 			<li>
+	 				Removal of redundant intermediate terms relating resistance determinant to drug class, with improved overall classification by Drug Class and Resistance Mechanism
+	 			</li>
+ 			</ul>
+
+ 			<h4>January 2018 Changes</h4>
+ 			<ul>
+ 				<li>
+ 					Parallel classification system added to the ARO for organization of RGI results: Drug Class, Resistance Mechanism, AMR Gene Family
+ 				</li>
+ 				<li>
+ 					ARO now available in GitHub, <a href="https://github.com/arpcard" target="_github">https://github.com/arpcard</a>
+ 				</li>
+ 			</ul>
+
+ 			<h4>April 2018 Changes</h4>
+ 			<ul>
+ 				<li>
+ 					Addition of extensive ontological terms describing phenotypic testing for antimicrobial resistance
+ 				</li>
+ 			</ul>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Message Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Message</h4>
+      </div>
+      <div class="modal-body">
+        <p>...</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--[ SPINNER MODAL ]-->
+
+<div id="spinner-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <img class="displayed" src="/ajax_loader_blue_128.gif">
+        <span id="output"></span>
+      </div>
+
+	<div class="modal-body">
+		<img class="displayed" src="/ajax_loader_blue_128.gif">
+	</div>
+
+  </div>
+  </div>
+</div>
+
+
+<!--[ JS ]-->
+<script type="text/javascript">
+
+	function note(){
+		$('#noteModal').modal('show');
+	}
+
+	function showSpinner(){
+		$('#spinner-modal').modal('show');
+	}
+
+	function hideSpinner(){
+		$('#spinner-modal').modal('hide');
+	}
+
+	function message(message){
+		$('#myModal').modal('show');
+		$(".modal-body").html(message);
+	}
+
+	function loading(message){
+		$('#spinner-modal').modal('show');
+		$(".modal-body").html(message);
+	}
+
+	function hideLoading(){
+		$('#spinner-modal').modal('hide');
+	}
+
+	function info(title,message){
+		$('#myModal').modal('show');
+		$('.modal-title').html(title);
+		$(".modal-body").html(message);
+	}
+
+</script>
+
+<div class="container">
+	<div class="row container-fluid">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h1>Error</h1></div>
+				<div class="panel-body">
+					Invalid url				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<!-- Script Footer -->
+
+ 	<script src="/js/bootstrap.min.js"></script>
+ 	<script src="/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript">
+	  /* GOOGLE ANYALYTICS - LOCAL DEV */
+	  /*
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-64534373-1', 'auto');
+	  ga('send', 'pageview');
+
+	  */
+	</script>
+
+	
+
+			<script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-75390811-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	
+	<script src="/fuse.min.js"></script>
+	<script type="text/javascript">
+
+		 /* LIVE SEARCH  */
+		 /*
+		$(document).ready(function() {
+
+			var timer;
+
+			$('#myInputTextField').keyup( function(){
+				clearTimeout(timer);
+				var ms = 300; // milliseconds
+				var val = $(this).val();
+
+				timer = setTimeout(function() {
+					lookup(val);
+				}, ms);
+			});
+
+		});
+		*/
+
+		function lookup(str) {
+
+			if (str.length==0) {
+				document.getElementById("livesearch").innerHTML="";
+				document.getElementById("livesearch").style.border="0px";
+				return;
+			}
+			var request = $.ajax({
+				url: "/livesearch",
+				method: "GET",
+				data: {
+					query: str
+				},
+				dataType: "json"
+			});
+
+			request.done(function( msg ) {
+				$('#livesearch').removeClass("livesearch");
+				$('#livesearch').addClass("livesearch");
+			    $('#livesearch').html(msg.response);
+			});
+
+			request.fail(function( jqXHR, textStatus ) {
+				console.log("Request failed: ",textStatus);
+			});
+		}
+		var obj;
+		var list;
+		/* LIVE SEARCH USING ONTOLOGY */
+
+		$(document).ready(function() {
+			// TODO:: store json on browser and lazy load it, maybe use IndexedDB or local storage
+			// load the search json on page ready
+			loadJSON();
+			$('#search').keyup( function(){
+				lookupOntology($(this).val());
+			});
+		});
+
+		// Load search json file
+		function loadJSON(){
+
+			var token = "IiF6Qfp9t513PQDYVOf1z0lfydTt1mJaUs8SkNL3";
+
+			var request = $.ajax({
+				url: "/load/json",
+				method: "GET",
+				data: { _token: token },
+				dataType: "json"
+			});
+
+			request.done(function( msg ) {
+				if(msg.error == false){
+					obj = msg.data;
+					list = Object.keys(obj).map(function(k) { return obj[k] });
+				}else{
+					message("Error loading JSON");
+				}
+			});
+
+			request.fail(function( jqXHR, textStatus ) {
+				console.log("Request failed: ",textStatus);
+				//message("Error Request failed to load JSON");
+			});
+		}
+
+		// Testing search alternative
+		function _lookupOntology(searchTerm){
+
+			var options = {
+			  caseSensitive: false,
+			  includeScore: false,
+			  shouldSort: true,
+			  threshold: 0.6, // At what point does the match algorithm give up. A threshold of 0.0 requires a perfect match (of both letters and location), a threshold of 1.0 would match anything
+			  location: 5, // Determines approximately where in the text is the pattern expected to be found
+			  distance: 0, // Determines how close the match must be to the fuzzy location (specified by location). An exact letter match which is distance characters away from the fuzzy location would score as a complete mismatch. A distance of 0 requires the match be at the exact location specified, a threshold of 1000 would require a perfect match to be within 800 characters of the location to be found using a threshold of 0.8.
+			  maxPatternLength: 20, // The maximum length of the pattern. The longer the pattern, the more intensive the search operation will be. Whenever the pattern exceeds the maxPatternLength, an error will be thrown.
+			  keys: ["name","comment","accession","synonym"]
+			};
+
+			if (searchTerm.length==0) {
+				document.getElementById("search").innerHTML="";
+				document.getElementById("search").style.border="0px";
+				$('#update').removeClass("livesearch");
+				$('#update').html("");
+				return;
+			}
+			// escape string
+			searchTerm = searchTerm.replace("'","\\'").replace("(","\\(").replace(")","\\)");
+
+
+			var fuse = new Fuse(list, options); // "list" is the item array
+			var data = fuse.search(searchTerm);
+			var output = "<ul id='result'>";
+			$.each(data, function(key, val){
+				var surfix = val.accession.split(":")[0];
+				var prefix = "<small class='text-muted'>["+surfix+"] </small>";
+
+				if(val.name != ""){
+						if(val.synonym != ""){
+							output += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+						}else{
+							output += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+						}
+				}
+			});
+
+			output += "</ul>";
+
+			if( output == "<ul id='result'></ul>"){
+				$('#update').removeClass("livesearch");
+				$('#update').addClass("livesearch");
+				$('#update').html("<ul id='result'>No match</ul>");
+			}else{
+				$('#update').removeClass("livesearch");
+				$('#update').addClass("livesearch");
+				$('#update').html(output);//output result to the update div
+			}
+
+		}
+
+		function lookupOntology(searchTerm){
+
+			if (searchTerm.length==0) {
+				document.getElementById("search").innerHTML="";
+				document.getElementById("search").style.border="0px";
+				$('#update').removeClass("livesearch");
+				$('#update').html("");
+				return;
+			}
+
+			// escape string
+			searchTerm = searchTerm.replace("'","\\'").replace("(","\\(").replace(")","\\)");
+
+			//regular experation
+			var myExp = new RegExp(searchTerm, "i");
+			var data = list;
+			var unsorted = [];
+			var output = "<ul id='result'>";
+			//var comments = [];
+			var ARO_list = "";
+			var RO_list = "";
+			var MO_list = "";
+			var NCBITaxon_list = "";
+			var mobio_list = "";
+			var viro_list ="";
+			var GO_list = "";
+			var DOID_list = "";
+			var HP_list = "";
+			var NCIT_list = "";
+			var SYMP_list = "";
+			var UBERON_list = "";
+			var CHEBI_list = "";
+			var BFO_list = "";
+			var CIDO_list = "";
+			var SBO_list = "";
+
+			//search for the data in the json file
+			$.each(data, function(key, val){
+
+				var surfix = val.accession.split(":")[0];
+
+				var _rank = "<"+val.rank+">";
+				var _rank = "";
+				var prefix = "<small class='text-muted'>["+surfix+"]"+_rank+" </small>";
+
+				if(val.name != ""){
+
+					_name_match = val.name.search(myExp);
+					_comment_match = val.comment.search(myExp);
+					_accession_match = val.accession.search(myExp);
+
+					if(_name_match != -1 || _comment_match  != -1 || _accession_match != -1){
+
+						_temp = [];
+
+						if (_name_match != -1 ){ _temp.push(_name_match); }
+						if (_comment_match != -1 ){ _temp.push(_comment_match); }
+						if (_accession_match != -1 ){ _temp.push(_accession_match); }
+
+						val.rank = val.rank + Array.min(_temp);
+
+						unsorted.push(val);
+					}
+
+				}
+
+			});//end each
+
+			unsorted.sort(function(a,b) {
+				return a.rank - b.rank;
+			});
+
+			$.each(unsorted, function(key, val){
+				var surfix = val.accession.split(":")[0];
+				var r = "<"+val.rank+">";
+				var r = "";
+				var prefix = "<small class='text-muted'>["+surfix+"]"+r+" </small>";
+
+						if(val.synonym != ""){
+							if(surfix == "ARO"){
+								if(val.CARD_short_names!=""){
+									ARO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> <font class="bar"> | </font> <i class="synonym">'+val.CARD_short_names+'</i></a></small></li>';
+								} else {
+									ARO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i></a></small></li>';
+								}
+
+							}
+							else if (surfix == "RO"){
+								RO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "MO"){
+								MO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "NCBITaxon"){
+								NCBITaxon_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}else if (surfix == "MOBIO"){
+								mobio_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}else if (surfix == "VIRO"){
+								viro_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "GO"){
+								GO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "DOID"){
+								DOID_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "HP"){
+								HP_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "NCIT"){
+								NCIT_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "SYMP"){
+								SYMP_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "UBERON"){
+								UBERON_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "CHEBI"){
+								CHEBI_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "BFO"){
+								BFO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "CIDO"){
+								CIDO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+							else if (surfix == "SBO"){
+								SBO_list += '<li><small><a class="ontology_links" href="'+val.uri+'">'+prefix+val.name+' <font class="bar"> | </font> <i class="synonym">'+val.synonym+'</i> </a></small></li>';
+							}
+
+
+						}else{
+							if(surfix == "ARO"){
+								ARO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "RO"){
+								RO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "MO"){
+								MO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "NCBITaxon"){
+								NCBITaxon_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}else if (surfix == "MOBIO"){
+								mobio_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}else if (surfix == "VIRO"){
+								viro_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "GO"){
+								GO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "DOID"){
+								DOID_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "HP"){
+								HP_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "NCIT"){
+								NCIT_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "SYMP"){
+								SYMP_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "UBERON"){
+								UBERON_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "CHEBI"){
+								CHEBI_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "BFO"){
+								BFO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "CIDO"){
+								CIDO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+							else if (surfix == "SBO"){
+								SBO_list += '<li><small><a class="ontology_links 1" href="'+val.uri+'"><font>'+prefix+val.name+'</font></a></small></li>';
+							}
+
+						}
+			});
+
+							output += ARO_list + RO_list + MO_list + NCBITaxon_list + GO_list + mobio_list + viro_list;
+			
+			output += "</ul>";
+
+			if( output == "<ul id='result'></ul>"){
+				$('#update').removeClass("livesearch");
+				$('#update').addClass("livesearch");
+				$('#update').html("<ul id='result'>No match</ul>");
+			}else{
+				$('#update').removeClass("livesearch");
+				$('#update').addClass("livesearch");
+				$('#update').html(output);//output result to the update div
+			}
+		}
+
+		function resize(str,size){
+			var name = str.substring(0, size);
+			if(str.length > name.length){
+				name = name + "...";
+			}
+			return name;
+		}
+
+		Array.min = function( array ){
+		    return Math.min.apply( Math, array );
+		};
+
+
+		function in_array(search,array){
+		    return array.indexOf(search) >= 0;
+		}
+
+		function dynamicSortMultiple() {
+		    /*
+		     * save the arguments object as it will be overwritten
+		     * note that arguments object is an array-like object
+		     * consisting of the names of the properties to sort by
+		     */
+		    var props = arguments;
+		    return function (obj1, obj2) {
+		        var i = 0, result = 0, numberOfProperties = props.length;
+		        /* try getting a different result from 0 (equal)
+		         * as long as we have extra properties to compare
+		         */
+		        while(result === 0 && i < numberOfProperties) {
+		            result = dynamicSort(props[i])(obj1, obj2);
+		            i++;
+		        }
+		        return result;
+		    }
+		}
+
+		function dynamicSort(property) {
+		    var sortOrder = 1;
+		    if(property[0] === "-") {
+		        sortOrder = -1;
+		        property = property.substr(1);
+		    }
+		    return function (a,b) {
+		        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+		        return result * sortOrder;
+		    }
+		}
+
+	</script>
+
+
+</body>
+<!-- Site footer -->
+<footer align="center">
+	<div class="bottom">
+	    <div class="container">
+	    	<div class="hidden-xs" align="center" valign="middle">
+		    	<table align="center" valign="middle">
+		    		<tr>
+		    		<td class="centeredlogo"><div><img src="/sponsors/1_INN_CFI_ENB_2C_RGB-620x208.jpg" alt="1_INN_CFI_ENB_2C_RGB-620x208.jpg" width="125" height="auto" border="1" /> </div></td><td class="centeredlogo"><div><img src="/sponsors/2_cihr-logo.jpg" alt="2_cihr-logo.jpg" width="125" height="auto" border="1" /> </div></td><td class="centeredlogo"><div><img src="/sponsors/3_cisco.jpeg" alt="3_cisco.jpeg" width="125" height="auto" border="1" /> </div></td><td class="centeredlogo"><div><img src="/sponsors/4_iidr_logo.jpg" alt="4_iidr_logo.jpg" width="250" height="auto" border="1" /> </div></td><td class="centeredlogo"><div><img src="/sponsors/5_GenomeCanadaColor.jpg" alt="5_GenomeCanadaColor.jpg" width="125" height="auto" border="1" /> </div></td><td class="centeredlogo"><div><img src="/sponsors/6_nserc_crsng_high.jpg" alt="6_nserc_crsng_high.jpg" width="125" height="auto" border="1" /> </div></td><td class="centeredlogo"><div><img src="/sponsors/7_orf.jpeg" alt="7_orf.jpeg" width="125" height="auto" border="1" /> </div></td>		    		</tr>
+		    	</table>
+	    	</div>
+	    	<div class="hidden-md hidden-sm hidden-lg">
+	    		<div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/1_INN_CFI_ENB_2C_RGB-620x208.jpg" alt="1_INN_CFI_ENB_2C_RGB-620x208.jpg" width="150" border="10" /></span> </div><div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/2_cihr-logo.jpg" alt="2_cihr-logo.jpg" width="150" border="10" /></span> </div><div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/3_cisco.jpeg" alt="3_cisco.jpeg" width="150" border="10" /></span> </div><div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/4_iidr_logo.jpg" alt="4_iidr_logo.jpg" width="150" border="10" /></span> </div><div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/5_GenomeCanadaColor.jpg" alt="5_GenomeCanadaColor.jpg" width="150" border="10" /></span> </div><div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/6_nserc_crsng_high.jpg" alt="6_nserc_crsng_high.jpg" width="150" border="10" /></span> </div><div class="col-md-4" width="20%" align="center" valign="middle"><span class=""><img src="/sponsors/7_orf.jpeg" alt="7_orf.jpeg" width="150" border="10" /></span> </div>	    	</div>
+	    </div>
+	</div>
+	<div align="center">
+		<small>
+		Primary Citation: <a href="http://www.ncbi.nlm.nih.gov/pubmed/36263822" target="_blank">Alcock <i>et al</i>. 2023. <i>Nucleic Acids Research</i>, <b>51</b>, D690-D699.</a>
+		<br>
+		Bait Capture Citation: <a href="https://pubmed.ncbi.nlm.nih.gov/40019273/" target="_blank">Hackenberger <i>et al</i>. 2025. <i>Appl Environ Microbiol</i>, <b>91</b>, e0187624.</a>
+		<br>
+		K-mer Algorithm Citation: <a href="https://www.biorxiv.org/content/10.1101/2025.09.15.676352v1" target="_blank">Wlodarski <i>et al</i>. 2025. <i>bioRxiv</i>, 2025.09.15.676352.</a>
+		</small>
+	</div>
+	<hr class="star-primary"/>
+</footer>
+</html>

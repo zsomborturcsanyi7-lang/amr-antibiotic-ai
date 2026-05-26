@@ -1,0 +1,50 @@
+Loading data...
+6236 seqs, 24 classes
+Clustering...
+Train: 6144 Test: 92
+
+=== DIPEPTIDE (clustered) ===
+Micro F1=0.1667 Macro F1=0.1089 AUC=nan Time=95.5s
+
+=== ESM-2 EMBEDDINGS ===
+  Loading facebook/esm2_t6_8M_UR50D on cuda...
+Some weights of EsmModel were not initialized from the model checkpoint at facebook/esm2_t6_8M_UR50D and are newly initialized: ['esm.pooler.dense.bias', 'esm.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+    0/6236
+    320/6236
+    640/6236
+    960/6236
+    1280/6236
+    1600/6236
+    1920/6236
+    2240/6236
+    2560/6236
+    2880/6236
+    3200/6236
+    3520/6236
+    3840/6236
+    4160/6236
+    4480/6236
+    4800/6236
+    5120/6236
+    5440/6236
+    5760/6236
+    6080/6236
+  Embeddings: (6236, 320)
+
+=== ESM-2 XGB (clustered) ===
+Micro F1=0.4184 Macro F1=0.3005 AUC=nan Time=101.9s
+
+=== ESM-2 + DIPEPTIDE ===
+Micro F1=0.3621 Macro F1=0.2671 AUC=nan Time=178.9s
+
+============================================================
+RESULTS (clustered split, 6144 train / 92 test):
+Feature                   Micro F1   Macro F1   AUC       
+------------------------- ---------- ---------- ----------
+Dipeptide                 0.1667     0.1089     nan       
+ESM-2                     0.4184     0.3005     nan       
+ESM-2 + Dipeptide         0.3621     0.2671     nan       
+
+ESM-2 improvement: +151% over dipeptide
+============================================================
