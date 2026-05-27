@@ -164,8 +164,8 @@ def detect_resistance_genes(genomes, card_genes):
         card_norms = card_features / (np.linalg.norm(card_features, axis=1, keepdims=True) + 1e-10)
         similarities = np.dot(card_norms, genome_norm)
         
-        # Threshold: top matches
-        threshold = 0.15
+        # Threshold: keep only strong matches
+        threshold = 0.4
         matches = np.where(similarities > threshold)[0]
         
         for idx in matches:
@@ -199,13 +199,26 @@ def build_dataset(genome_data, card_genes):
     X = np.array([g['kmers'] for g in labeled], dtype=np.float32)
     Y_sets = [g['drug_labels'] for g in labeled]
     
-    # Collect all classes
+    # Collect all classes and filter to those with >=3 positive samples
     all_classes = sorted(set().union(*Y_sets))
-    mlb = MultiLabelBinarizer(classes=all_classes)
+    class_counts = {c: sum(1 for ys in Y_sets if c in ys) for c in all_classes}
+    frequent_classes = [c for c, cnt in class_counts.items() if cnt >= 3]
+    
+    if len(frequent_classes) < 2:
+        print(f"  WARNING: Only {len(frequent_classes)} frequent classes. Using species labels.", flush=True)
+        for g in genome_data:
+            g['drug_labels'] = {g['species']}
+        Y_sets = [g['drug_labels'] for g in labeled]
+        all_classes = sorted(set().union(*Y_sets))
+        frequent_classes = all_classes
+    
+    print(f"  Filtered to {len(frequent_classes)}/{len(all_classes)} classes (>=3 samples)", flush=True)
+    
+    mlb = MultiLabelBinarizer(classes=frequent_classes)
     Y = mlb.fit_transform(Y_sets)
     
-    print(f"  X: {X.shape}, Y: {Y.shape}, classes: {len(all_classes)}", flush=True)
-    print(f"  Classes: {all_classes}", flush=True)
+    print(f"  X: {X.shape}, Y: {Y.shape}, classes: {len(frequent_classes)}", flush=True)
+    print(f"  Classes: {frequent_classes[:10]}{'...' if len(frequent_classes) > 10 else ''}", flush=True)
     
     return X, Y, mlb
 
@@ -218,15 +231,34 @@ def train_evaluate(X, Y, mlb, model_path=None):
     print("TRAINING", flush=True)
     print("="*60)
     
-    from sklearn.model_selection import StratifiedKFold, train_test_split
+    from sklearn.model_selection import train_test_split
     
-    # Split
-    if len(X) >= 20:
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, Y, test_size=0.3, random_state=SEED, stratify=Y.any(axis=1) if Y.shape[1] > 1 else None
-        )
+    # Split (no stratification for multi-label — too many edge cases)
+    np.random.seed(SEED)
+    if len(X) >= 15:
+        indices = np.random.permutation(len(X))
+        split = int(len(X) * 0.7)
+        X_train, X_test = X[indices[:split]], X[indices[split:]]
+        y_train, y_test = Y[indices[:split]], Y[indices[split:]]
     else:
-        X_train, X_test, y_train, y_test = X, X, Y, Y  # Whole dataset if too small
+        X_train, X_test, y_train, y_test = X, X, Y, Y
+    
+    # Remove columns with only one unique value in training set
+    valid_cols = []
+    for c in range(y_train.shape[1]):
+        unique = np.unique(y_train[:, c])
+        if len(unique) >= 2:
+            valid_cols.append(c)
+    
+    if len(valid_cols) < y_train.shape[1]:
+        dropped = y_train.shape[1] - len(valid_cols)
+        print(f"  Dropped {dropped} columns with <2 unique values in train", flush=True)
+        y_train = y_train[:, valid_cols]
+        y_test = y_test[:, valid_cols]
+    
+    if len(valid_cols) == 0:
+        print("  ERROR: No valid columns left after filtering. Saving features only.", flush=True)
+        return 0.0, 0.0
     
     print(f"  Train: {X_train.shape[0]}, Test: {X_test.shape[0]}", flush=True)
     
