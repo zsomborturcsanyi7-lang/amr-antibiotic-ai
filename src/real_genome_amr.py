@@ -34,32 +34,45 @@ def load_card_genes():
         card = json.load(f)
     
     genes = []
-    for entry in card.values() if isinstance(card, dict) else card:
-        if isinstance(entry, dict):
-            seq = entry.get('model_sequences', {}).get('nucleotide')
-            if not seq:
-                seq = entry.get('dna_sequence', '')
-            if not seq:
-                continue
-            
-            # Drug classes from ARO categories
-            cats = entry.get('ARO_category', entry.get('aro_category', {}))
-            drug_classes = set()
-            if isinstance(cats, dict):
-                for cat_name in cats.get('category', cats.get('ARO_category', {})):
-                    if isinstance(cat_name, dict):
-                        dc = cat_name.get('category_aro_class_name', '')
+    for entry in card.values():
+        if not isinstance(entry, dict):
+            continue
+        
+        # Extract DNA sequence from nested structure
+        dna_seq = None
+        model_seqs = entry.get('model_sequences', {})
+        seq_wrapper = model_seqs.get('sequence', {})
+        if isinstance(seq_wrapper, dict):
+            for model_id, seq_data in seq_wrapper.items():
+                if isinstance(seq_data, dict):
+                    dna_info = seq_data.get('dna_sequence', {})
+                    if isinstance(dna_info, dict):
+                        dna_seq = dna_info.get('sequence', '')
+                        if dna_seq:
+                            break
+        
+        if not dna_seq or len(dna_seq) < 30:
+            continue
+        
+        # Extract drug classes from ARO_category
+        drug_classes = set()
+        cats = entry.get('ARO_category', {})
+        if isinstance(cats, dict):
+            for cat_id, cat_info in cats.items():
+                if isinstance(cat_info, dict):
+                    if cat_info.get('category_aro_class_name') == 'Drug Class':
+                        dc = cat_info.get('category_aro_name', '')
                         if dc:
                             drug_classes.add(dc)
-            
-            if not drug_classes:
-                continue
-            
-            genes.append({
-                'name': entry.get('ARO_name', entry.get('aro_name', '?')),
-                'dna': seq.upper(),
-                'drugs': drug_classes
-            })
+        
+        if not drug_classes:
+            continue
+        
+        genes.append({
+            'name': entry.get('ARO_name', '?'),
+            'dna': dna_seq.upper(),
+            'drugs': drug_classes
+        })
     
     print(f"  {len(genes)} genes with sequences + drug classes", flush=True)
     return genes
@@ -68,7 +81,14 @@ def load_card_genes():
 # 2. K-mer utilities
 # ──────────────────────────────────────────────
 def compute_kmers(sequence, k=K, n_features=N_FEATURES, step=3):
-    """Compute sparse k-mer frequency vector."""
+    """Compute sparse k-mer frequency vector.
+    
+    Args:
+        sequence: DNA string
+        k: k-mer size (default 12)
+        n_features: hash space size (default 20000)
+        step: stride for sampling (lower = more kmers but slower)
+    """
     features = np.zeros(n_features, dtype=np.float32)
     n_kmers = len(sequence) - k + 1
     if n_kmers <= 0:
@@ -111,7 +131,6 @@ def load_real_genomes(max_per_species=5):
                     'species': species,
                     'file': gf.name,
                     'kmers': kmers,
-                    'genome': seq,
                     'length': len(seq),
                 })
                 print(f"{len(seq)/1e6:.1f}Mbp OK", flush=True)
@@ -125,40 +144,34 @@ def load_real_genomes(max_per_species=5):
 # 4. Label genomes by CARD gene presence
 # ──────────────────────────────────────────────
 def detect_resistance_genes(genomes, card_genes):
-    """Detect CARD genes in genomes via k-mer Jaccard similarity."""
+    """Detect CARD genes in genomes via k-mer feature vector similarity."""
     print("\nDetecting resistance genes...", flush=True)
     
-    # Pre-compute card gene k-mers
-    card_kmers = []
-    for cg in card_genes:
-        card_kmers.append({
-            'name': cg['name'],
-            'drugs': cg['drugs'],
-            'kmer_set': set(),
-        })
-        seq = cg['dna']
-        for i in range(0, len(seq) - K + 1, 1):
-            card_kmers[-1]['kmer_set'].add(seq[i:i+K])
+    # Compute CARD gene feature vectors
+    print(f"  Computing {len(card_genes)} CARD gene feature vectors...", flush=True)
+    card_features = np.zeros((len(card_genes), N_FEATURES), dtype=np.float32)
+    for i, cg in enumerate(card_genes):
+        card_features[i] = compute_kmers(cg['dna'], step=1)
+    print(f"  Done.", flush=True)
     
+    # Compare each genome against all CARD genes
     for g in genomes:
         g['detected_genes'] = []
         g['drug_labels'] = set()
         
-        # Compute genome k-mer set
-        genome_set = set()
-        seq = g['genome']
-        for i in range(0, len(seq) - K + 1, max(1, len(seq) // 1_000_000)):
-            genome_set.add(seq[i:i+K])
+        # Cosine-like similarity: normalize, then dot product
+        genome_norm = g['kmers'] / (np.linalg.norm(g['kmers']) + 1e-10)
+        card_norms = card_features / (np.linalg.norm(card_features, axis=1, keepdims=True) + 1e-10)
+        similarities = np.dot(card_norms, genome_norm)
         
-        # Check each CARD gene
-        for ck in card_kmers:
-            overlap = len(genome_set & ck['kmer_set'])
-            total = len(ck['kmer_set'])
-            if total > 0 and overlap / total > 0.3:
-                g['detected_genes'].append(ck['name'])
-                g['drug_labels'].update(ck['drugs'])
+        # Threshold: top matches
+        threshold = 0.15
+        matches = np.where(similarities > threshold)[0]
+        
+        for idx in matches:
+            g['detected_genes'].append(card_genes[idx]['name'])
+            g['drug_labels'].update(card_genes[idx]['drugs'])
     
-    # Report
     detected_counts = [len(g['detected_genes']) for g in genomes]
     labeled_counts = [len(g['drug_labels']) for g in genomes]
     print(f"  Detected genes per genome: min={min(detected_counts)}, max={max(detected_counts)}, "
