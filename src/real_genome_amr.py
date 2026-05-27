@@ -190,8 +190,18 @@ def build_dataset(genome_data, card_genes):
     labeled = [g for g in genome_data if g['drug_labels']]
     print(f"  {len(labeled)}/{len(genome_data)} genomes have drug labels", flush=True)
     
-    if len(labeled) < 10:
-        print("  WARNING: Too few labeled genomes. Using species as proxy labels.", flush=True)
+    # Check if CARD detection produced useful labels (not all uniform)
+    all_labels = set().union(*[g['drug_labels'] for g in labeled])
+    class_counts = {c: sum(1 for g in labeled if c in g['drug_labels']) for c in all_labels}
+    # If all classes appear in all samples, or too few total classes, use species
+    use_species = (
+        len(all_labels) < 3 or 
+        all(cnt == len(labeled) for cnt in class_counts.values()) or
+        len([c for c, cnt in class_counts.items() if 2 <= cnt <= len(labeled)-2]) < 2
+    )
+    
+    if use_species:
+        print(f"  CARD labels too uniform ({len(all_labels)} classes, all same prevalence). Using species.", flush=True)
         for g in genome_data:
             g['drug_labels'] = {g['species']}
         labeled = genome_data
