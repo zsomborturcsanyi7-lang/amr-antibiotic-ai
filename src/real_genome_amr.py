@@ -140,7 +140,7 @@ def detect_resistance_genes(genomes, card_genes):
         for i in range(0, len(seq) - K + 1, 1):
             card_kmers[-1]['kmer_set'].add(seq[i:i+K])
     
-    for g in genome_data:
+    for g in genomes:
         g['detected_genes'] = []
         g['drug_labels'] = set()
         
@@ -159,8 +159,8 @@ def detect_resistance_genes(genomes, card_genes):
                 g['drug_labels'].update(ck['drugs'])
     
     # Report
-    detected_counts = [len(g['detected_genes']) for g in genome_data]
-    labeled_counts = [len(g['drug_labels']) for g in genome_data]
+    detected_counts = [len(g['detected_genes']) for g in genomes]
+    labeled_counts = [len(g['drug_labels']) for g in genomes]
     print(f"  Detected genes per genome: min={min(detected_counts)}, max={max(detected_counts)}, "
           f"mean={np.mean(detected_counts):.1f}", flush=True)
     print(f"  Drug labels per genome: min={min(labeled_counts)}, max={max(labeled_counts)}, "
