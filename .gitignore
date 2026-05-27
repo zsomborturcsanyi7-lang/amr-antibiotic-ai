@@ -21,3 +21,4 @@ venv/
 .vscode/
 .idea/
 *.swp
+data/raw/fda_argos/refseq/
