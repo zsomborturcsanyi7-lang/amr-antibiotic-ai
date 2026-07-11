@@ -1,5 +1,8 @@
 # amr-prediction — Antimicrobial Resistance Prediction
 
+**Status:** ⚠️ Prototype — CARD database integration done, prediction pipeline needs full dataset
+
+
 Antimicrobial resistance prediction from protein/genomic sequences using machine learning.
 
 ## Features
