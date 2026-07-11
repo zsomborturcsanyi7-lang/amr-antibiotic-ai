@@ -1,0 +1,14 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Binary files
+*.jar binary
+*.exe binary
+*.dll binary
+*.pkl binary
+*.pt binary
+*.sqlite binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.ico binary
