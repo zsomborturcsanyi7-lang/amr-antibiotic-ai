@@ -1,27 +1,27 @@
 # amr-prediction — Antimicrobial Resistance Prediction
 
-Antimikrobiális rezisztencia predikció protein/genomi szekvenciákból gépi tanulással.
+Antimicrobial resistance prediction from protein/genomic sequences using machine learning.
 
-## Funkciók
-- CARD adatbázis integráció
-- Protein szekvencia elemzés
-- AMR gén detektálás
-- Rezisztencia profil predikció
+## Features
+- CARD database integration
+- Protein sequence analysis
+- AMR gene detection
+- Resistance profile prediction
 
-## Adatok
-- 50+ bakteriális genom
+## Data
+- 50+ bacterial genomes
 - CARD (Comprehensive Antibiotic Resistance Database)
 
-## Használat
+## Usage
 ```bash
-# AMR predikció futtatása
+# Run AMR prediction
 python src/predict_amr.py --input genome.fasta
 
-# Eredmények
+# Results
 cat results/predictions.csv
 ```
 
-## Függőségek
+## Dependencies
 - Python 3.8+
 - Biopython, scikit-learn
 - pandas, numpy
