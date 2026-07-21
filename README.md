@@ -1,33 +1,32 @@
-# AMR Prediction — Antimikrobiális rezisztencia predikció gépi tanulással
+# AMR Prediction — Antimicrobial Resistance Prediction with ML
 
-**Status:** ⚠️ Prototype — CARD adatbázis integráció kész, predikciós pipeline-hoz teljes adatkészlet kell
+**Status:** ⚠️ Prototype — CARD database integration done, prediction pipeline needs full dataset
 
-ML-alapú antimikrobiális rezisztencia predikció protein/genom szekvenciákból. CARD (Comprehensive Antibiotic Resistance Database) integrációval.
+ML-based antimicrobial resistance prediction from protein/genomic sequences. Integrates the CARD (Comprehensive Antibiotic Resistance Database).
 
 ## ⚠️ THIS PROJECT IS UNFINISHED — FEEL FREE TO CONTINUE IT ⚠️
 
-**Ez a projekt NINCS KÉSZEN. Bárki folytathatja, aki akarja!**
-Ezt a projektet Zsombi & Hermes Agent (Nous Research) közösen fejlesztette, de egyik projekt sincs 100%-osan befejezve.
+This project was developed by Zsombi & Hermes Agent (Nous Research).
 
 ---
 
 ## Features
-- CARD adatbázis integráció
-- Protein szekvencia analízis
-- AMR gén detektálás
-- Rezisztencia profil predikció
+- CARD database integration
+- Protein sequence analysis
+- AMR gene detection
+- Resistance profile prediction
 
-## Adatok
-- 50+ bakteriális genom
+## Data
+- 50+ bacterial genomes
 - CARD (Comprehensive Antibiotic Resistance Database)
 
-## Fájlok
-| Fájl | Leírás |
-|------|--------|
-| `src/` | Forráskód |
-| `data/` | Adatok |
-| `results/` | Eredmények |
-| `thinking/` | Kutatási jegyzetek |
+## Files
+| File | Description |
+|------|-------------|
+| `src/` | Source code |
+| `data/` | Data |
+| `results/` | Results |
+| `thinking/` | Research notes |
 
-## Fejlesztő
+## Developer
 Zsombi & Hermes Agent (Nous Research)
