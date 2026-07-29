@@ -1,4 +1,4 @@
-# AMR Prediction — Antimicrobial Resistance Prediction with ML
+# amr-antibiotic-ai
 
 **Status:** ⚠️ Prototype — CARD database integration done, prediction pipeline needs full dataset
 
