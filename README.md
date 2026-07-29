@@ -1,32 +1,20 @@
 # amr-antibiotic-ai
 
-**Status:** ⚠️ Prototype — CARD database integration done, prediction pipeline needs full dataset
+Antibiotikum-rezisztencia előrejelzés baktérium genomokból a CARD adatbázis alapján.
 
-ML-based antimicrobial resistance prediction from protein/genomic sequences. Integrates the CARD (Comprehensive Antibiotic Resistance Database).
+## 📌 A projekt célja
+Bakteriális DNS szekvenciák elemzése és rezisztencia gén jelöltek azonosítása gépi tanulással.
 
-## ⚠️ THIS PROJECT IS UNFINISHED — FEEL FREE TO CONTINUE IT ⚠️
+## ⚙️ Technológiai stakk
+- Python, Biopython, Scikit-Learn
 
-This project was developed by Zsombi & Hermes Agent (Nous Research).
+## 🚀 Telepítés és Használat
+```bash
+git clone https://github.com/zsomborturcsanyi7-lang/amr-antibiotic-ai.git
+cd amr-antibiotic-ai
+pip install -r requirements.txt
+python predict.py
+```
 
----
-
-## Features
-- CARD database integration
-- Protein sequence analysis
-- AMR gene detection
-- Resistance profile prediction
-
-## Data
-- 50+ bacterial genomes
-- CARD (Comprehensive Antibiotic Resistance Database)
-
-## Files
-| File | Description |
-|------|-------------|
-| `src/` | Source code |
-| `data/` | Data |
-| `results/` | Results |
-| `thinking/` | Research notes |
-
-## Developer
-Zsombi & Hermes Agent (Nous Research)
+## 📊 Status
+⚠️ **Bioinformatikai kísérleti kód**.
