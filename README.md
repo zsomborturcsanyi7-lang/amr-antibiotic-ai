@@ -1,14 +1,14 @@
 # amr-antibiotic-ai
 
-Antibiotikum-rezisztencia előrejelzés baktérium genomokból a CARD adatbázis alapján.
+Antimicrobial resistance prediction from bacterial genomes based on the CARD database.
 
-## 📌 A projekt célja
-Bakteriális DNS szekvenciák elemzése és rezisztencia gén jelöltek azonosítása gépi tanulással.
+## 📌 Overview & Purpose
+Analyzes bacterial DNA sequences and predicts resistance genes using machine learning models trained on CARD data.
 
-## ⚙️ Technológiai stakk
+## ⚙️ Tech Stack & Architecture
 - Python, Biopython, Scikit-Learn
 
-## 🚀 Telepítés és Használat
+## 🚀 Installation & Quickstart
 ```bash
 git clone https://github.com/zsomborturcsanyi7-lang/amr-antibiotic-ai.git
 cd amr-antibiotic-ai
@@ -16,5 +16,5 @@ pip install -r requirements.txt
 python predict.py
 ```
 
-## 📊 Status
-⚠️ **Bioinformatikai kísérleti kód**.
+## 📊 Project Status
+⚠️ **Bioinformatics Experimental Code**.
